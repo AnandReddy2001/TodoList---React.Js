@@ -45,7 +45,7 @@ const Todo = () => {
   };
   return (
     <div className="todo-container">
-      <h1>Todo List</h1>
+      <h1>T.List</h1>
       <div className="child-container">
         <div className="input-container">
           <input
@@ -72,6 +72,7 @@ const Todo = () => {
               ) : (
                 <div className="task-list">
                   <span>{task.text}</span>
+
                   <div className="task-controls">
                     <input
                       type="checkbox"
@@ -80,7 +81,12 @@ const Todo = () => {
                     />
                     <div>
                       <button onClick={() => EditTask(index)}>Edit</button>
-                      <button onClick={() => DeleteTask(index)}>Delete</button>
+                      <button
+                        onClick={() => DeleteTask(index)}
+                        className="delete-button"
+                      >
+                        Delete
+                      </button>
                     </div>
                   </div>
                 </div>

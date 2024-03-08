@@ -1,0 +1,112 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 70%;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.Business_Details button {
+  margin-bottom: 20px;
+  padding: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 25px;
+  border: none;
+  background-color: white;
+  font-size: 12px;
+}
+
+#colorButton {
+  padding: 10px 20px;
+  font-size: 12px;
+  background-color: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  margin-left: 21px;
+}
+
+#colorButton.clicked {
+  background-color: #5d3587;
+  color: white;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center;
+    justify-content: center; */
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-left: 15px;
+}
+.form-group {
+  flex: 0 0 calc(100% / 2 - 20px);
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 94%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+/* .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  } */
+
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+.form-checkbox {
+  margin-bottom: 20px;
+  margin-left: 21px;
+  width: 96%;
+}
+
+.form-group button {
+  padding: 10px 20px;
+  background-color: #5d3587;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.form-group button:hover {
+  background-color: #0056b3;
+}
+
+#bd-Previous {
+  background-color: white;
+  border: 0.7px solid;
+  border-color: #5d3587;
+  color: #5d3587;
+  margin-left: 21px;
+}

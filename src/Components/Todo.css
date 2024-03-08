@@ -48,6 +48,7 @@ input[type="text"] {
 input[type="checkbox"] {
   width: 25px;
   height: 25px;
+  cursor: pointer;
 }
 
 button {
@@ -57,10 +58,19 @@ button {
   border: none;
   cursor: pointer;
   margin-left: 5px;
+  /* border-radius: 5px; */
 }
 
 button:hover {
   background-color: #0056b3;
+}
+
+.delete-button {
+  background-color: red;
+}
+
+.delete-button:hover {
+  background-color: rgb(202, 6, 6);
 }
 
 .list-container {
