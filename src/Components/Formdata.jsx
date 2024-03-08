@@ -8,6 +8,9 @@ const Formdata = () => {
     business_pan: "",
     business_age: "",
     business_gst: "",
+    business_category: "",
+    Business_Constitution: "",
+
     confirm: false,
   };
 
@@ -78,6 +81,100 @@ const Formdata = () => {
               name="business_gst"
               placeholder="2354355HGRE"
               value={formik.values.business_gst}
+              onChange={formik.handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="business_category">Business Category:</label>
+            <input
+              type="text"
+              id="business_category"
+              name="business_category"
+              placeholder="Automobiles"
+              value={formik.values.business_category}
+              onChange={formik.handleChange}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="Business_Constitution">
+              Business Constitution:
+            </label>
+            <input
+              type="text"
+              id="Business_Constitution"
+              name="Business_Constitution"
+              placeholder="P- Individual/Sole Proprietor"
+              value={formik.values.Business_Constitution}
+              onChange={formik.handleChange}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="CIN_LLPIN">CIN / LLPIN:</label>
+            <input
+              type="number"
+              id="CIN_LLPIN"
+              name="CIN_LLPIN"
+              placeholder="34543433"
+              value={formik.values.CIN_LLPIN}
+              onChange={formik.handleChange}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="Business_Address">Business Address:</label>
+            <input
+              type="text"
+              id="Business_Address"
+              name="Business_Address"
+              placeholder="JP nagar 2nd phase"
+              value={formik.values.Business_Address}
+              onChange={formik.handleChange}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="Date_Of_Incorporation">
+              Date Of Incorporation:
+            </label>
+            <input
+              type="date"
+              id="Date_Of_Incorporation"
+              name="Date_Of_Incorporation"
+              placeholder="12/08/2003"
+              value={formik.values.Date_Of_Incorporation}
+              onChange={formik.handleChange}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="Pincode">Pincode:</label>
+            <input
+              type="number"
+              id="Pincode"
+              name="Pincode"
+              placeholder="560078"
+              value={formik.values.Pincode}
+              onChange={formik.handleChange}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="Business_Turnover">Business Turnover:</label>
+            <input
+              type="text"
+              id="Business_Turnover"
+              name="Business_Turnover"
+              placeholder="0-10 lacs"
+              value={formik.values.Business_Turnover}
               onChange={formik.handleChange}
               required
             />
