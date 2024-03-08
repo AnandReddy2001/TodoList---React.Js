@@ -1,16 +1,43 @@
 import React from "react";
 import { useFormik } from "formik";
+import * as Yup from "yup";
 import "./Form.css";
 
 const Formdata = () => {
+  const validationSchema = Yup.object({
+    business_name: Yup.string().required("Business Name is required"),
+    business_pan: Yup.string().required("Business pan is required"),
+    business_age: Yup.string().required("Business Age is required"),
+    business_gst: Yup.string().required("Business GST is required"),
+    business_category: Yup.string().required("Business Category is required"),
+    CIN_LLPIN: Yup.number().required("CIN / LLPIN is required"),
+    Business_Constitution: Yup.string().required(
+      "Business Constitution is required"
+    ),
+    Business_Address: Yup.string().required("Business Address is required"),
+    Business_Turnover: Yup.string().required("Business Turnover is required"),
+    Pincode: Yup.number().required("Pincode is required"),
+    confirm: Yup.boolean().oneOf(
+      [true],
+      "Please accept the terms and conditions"
+    ),
+    Date_Of_Incorporation: Yup.date().required(
+      "Date Of Incorporation is required"
+    ),
+  });
+
   const initialValues = {
     business_name: "",
     business_pan: "",
     business_age: "",
     business_gst: "",
     business_category: "",
+    CIN_LLPIN: "",
     Business_Constitution: "",
-
+    Business_Address: "",
+    Business_Turnover: "",
+    Pincode: "",
+    Date_Of_Incorporation: "",
     confirm: false,
   };
 
@@ -21,6 +48,7 @@ const Formdata = () => {
 
   const formik = useFormik({
     initialValues,
+    validationSchema,
     onSubmit,
   });
 
@@ -43,8 +71,11 @@ const Formdata = () => {
               placeholder="Ram pvt ltd"
               value={formik.values.business_name}
               onChange={formik.handleChange}
-              required
             />
+
+            {formik.touched.business_name && formik.errors.business_name && (
+              <div className="error">{formik.errors.business_name}</div>
+            )}
           </div>
 
           <div className="form-group box">
@@ -56,8 +87,10 @@ const Formdata = () => {
               placeholder="OLCPS14554"
               value={formik.values.business_pan}
               onChange={formik.handleChange}
-              required
             />
+            {formik.touched.business_pan && formik.errors.business_pan && (
+              <div className="error">{formik.errors.business_pan}</div>
+            )}
           </div>
 
           <div className="form-group">
@@ -69,8 +102,11 @@ const Formdata = () => {
               placeholder="0-1 year"
               value={formik.values.business_age}
               onChange={formik.handleChange}
-              required
             />
+            {}
+            {formik.touched.business_age && formik.errors.business_age && (
+              <div className="error">{formik.errors.business_age}</div>
+            )}
           </div>
 
           <div className="form-group">
@@ -82,8 +118,10 @@ const Formdata = () => {
               placeholder="2354355HGRE"
               value={formik.values.business_gst}
               onChange={formik.handleChange}
-              required
             />
+            {formik.touched.business_gst && formik.errors.business_gst && (
+              <div className="error">{formik.errors.business_gst}</div>
+            )}
           </div>
           <div className="form-group">
             <label htmlFor="business_category">Business Category:</label>
@@ -94,8 +132,11 @@ const Formdata = () => {
               placeholder="Automobiles"
               value={formik.values.business_category}
               onChange={formik.handleChange}
-              required
             />
+            {formik.touched.business_category &&
+              formik.errors.business_category && (
+                <div className="error">{formik.errors.business_category}</div>
+              )}
           </div>
 
           <div className="form-group">
@@ -109,8 +150,13 @@ const Formdata = () => {
               placeholder="P- Individual/Sole Proprietor"
               value={formik.values.Business_Constitution}
               onChange={formik.handleChange}
-              required
             />
+            {formik.touched.Business_Constitution &&
+              formik.errors.Business_Constitution && (
+                <div className="error">
+                  {formik.errors.Business_Constitution}
+                </div>
+              )}
           </div>
 
           <div className="form-group">
@@ -122,8 +168,10 @@ const Formdata = () => {
               placeholder="34543433"
               value={formik.values.CIN_LLPIN}
               onChange={formik.handleChange}
-              required
             />
+            {formik.touched.business_pan && formik.errors.business_pan && (
+              <div className="error">{formik.errors.business_pan}</div>
+            )}
           </div>
 
           <div className="form-group">
@@ -135,8 +183,11 @@ const Formdata = () => {
               placeholder="JP nagar 2nd phase"
               value={formik.values.Business_Address}
               onChange={formik.handleChange}
-              required
             />
+            {formik.touched.Business_Address &&
+              formik.errors.Business_Address && (
+                <div className="error">{formik.errors.Business_Address}</div>
+              )}
           </div>
 
           <div className="form-group">
@@ -150,8 +201,10 @@ const Formdata = () => {
               placeholder="12/08/2003"
               value={formik.values.Date_Of_Incorporation}
               onChange={formik.handleChange}
-              required
             />
+            {formik.Date_Of_Incorporation && formik.Date_Of_Incorporation && (
+              <div className="error">{formik.Date_Of_Incorporation}</div>
+            )}
           </div>
 
           <div className="form-group">
@@ -163,8 +216,10 @@ const Formdata = () => {
               placeholder="560078"
               value={formik.values.Pincode}
               onChange={formik.handleChange}
-              required
             />
+            {formik.touched.Pincode && formik.errors.Pincode && (
+              <div className="error">{formik.errors.Pincode}</div>
+            )}
           </div>
 
           <div className="form-group">
@@ -176,8 +231,11 @@ const Formdata = () => {
               placeholder="0-10 lacs"
               value={formik.values.Business_Turnover}
               onChange={formik.handleChange}
-              required
             />
+            {formik.touched.Business_Turnover &&
+              formik.errors.Business_Turnover && (
+                <div className="error">{formik.errors.Business_Turnover}</div>
+              )}
           </div>
         </div>
 
