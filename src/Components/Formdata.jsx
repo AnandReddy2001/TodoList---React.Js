@@ -6,7 +6,12 @@ import "./Form.css";
 const Formdata = () => {
   const validationSchema = Yup.object({
     business_name: Yup.string().required("Business Name is required"),
-    business_pan: Yup.string().required("Business pan is required"),
+    business_pan: Yup.string()
+      .required("Business pan is required")
+      .matches(
+        /[A-Z]{5}[0-9]{4}[A-Z]{1}/,
+        "Invalid PAN card number. Please enter a valid PAN card number."
+      ),
     business_age: Yup.string().required("Business Age is required"),
     business_gst: Yup.string().required("Business GST is required"),
     business_category: Yup.string().required("Business Category is required"),
@@ -21,9 +26,7 @@ const Formdata = () => {
       [true],
       "Please accept the terms and conditions"
     ),
-    Date_Of_Incorporation: Yup.date().required(
-      "Date Of Incorporation is required"
-    ),
+    Date_Of_Incorporation: Yup.date().required("Date is required"),
   });
 
   const initialValues = {
@@ -71,6 +74,7 @@ const Formdata = () => {
               placeholder="Ram pvt ltd"
               value={formik.values.business_name}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             />
 
             {formik.touched.business_name && formik.errors.business_name && (
@@ -87,6 +91,7 @@ const Formdata = () => {
               placeholder="OLCPS14554"
               value={formik.values.business_pan}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             />
             {formik.touched.business_pan && formik.errors.business_pan && (
               <div className="error">{formik.errors.business_pan}</div>
@@ -102,6 +107,7 @@ const Formdata = () => {
               placeholder="0-1 year"
               value={formik.values.business_age}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             />
             {}
             {formik.touched.business_age && formik.errors.business_age && (
@@ -118,6 +124,7 @@ const Formdata = () => {
               placeholder="2354355HGRE"
               value={formik.values.business_gst}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             />
             {formik.touched.business_gst && formik.errors.business_gst && (
               <div className="error">{formik.errors.business_gst}</div>
@@ -132,6 +139,7 @@ const Formdata = () => {
               placeholder="Automobiles"
               value={formik.values.business_category}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             />
             {formik.touched.business_category &&
               formik.errors.business_category && (
@@ -150,6 +158,7 @@ const Formdata = () => {
               placeholder="P- Individual/Sole Proprietor"
               value={formik.values.Business_Constitution}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             />
             {formik.touched.Business_Constitution &&
               formik.errors.Business_Constitution && (
@@ -168,6 +177,7 @@ const Formdata = () => {
               placeholder="34543433"
               value={formik.values.CIN_LLPIN}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             />
             {formik.touched.business_pan && formik.errors.business_pan && (
               <div className="error">{formik.errors.business_pan}</div>
@@ -183,6 +193,7 @@ const Formdata = () => {
               placeholder="JP nagar 2nd phase"
               value={formik.values.Business_Address}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             />
             {formik.touched.Business_Address &&
               formik.errors.Business_Address && (
@@ -201,10 +212,14 @@ const Formdata = () => {
               placeholder="12/08/2003"
               value={formik.values.Date_Of_Incorporation}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             />
-            {formik.Date_Of_Incorporation && formik.Date_Of_Incorporation && (
-              <div className="error">{formik.Date_Of_Incorporation}</div>
-            )}
+            {formik.touched.Date_Of_Incorporation &&
+              formik.errors.Date_Of_Incorporation && (
+                <div className="error">
+                  {formik.errors.Date_Of_Incorporation}
+                </div>
+              )}
           </div>
 
           <div className="form-group">
@@ -216,6 +231,7 @@ const Formdata = () => {
               placeholder="560078"
               value={formik.values.Pincode}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             />
             {formik.touched.Pincode && formik.errors.Pincode && (
               <div className="error">{formik.errors.Pincode}</div>
@@ -231,6 +247,7 @@ const Formdata = () => {
               placeholder="0-10 lacs"
               value={formik.values.Business_Turnover}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             />
             {formik.touched.Business_Turnover &&
               formik.errors.Business_Turnover && (
